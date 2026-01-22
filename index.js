@@ -36,8 +36,8 @@ async function screenshot(url) {
     }
     catch (e){
       console.log(e)
-    } 
-    await sleep(500)   
+    }
+    await sleep(500)
     }
 
   console.log("Error failed to produce screenshot")
@@ -50,8 +50,7 @@ module.exports.handler = async function handler(event, context, callback) {
   t0 = new Date().getTime()
 
   const queryStringParameters = event.queryStringParameters || {};
-  const { url = "https://www.mozilla.org"} =
-    queryStringParameters;
+  const { url = "https://hubsfoundation.org/" } = queryStringParameters;
 
   if (!(await urlAllowed(url))) {
     return callback(null, { statusCode: 403, body: "forbidden" });
@@ -66,7 +65,7 @@ module.exports.handler = async function handler(event, context, callback) {
   try {
     const result = await screenshot(url);
     // console.log( "screenshot(url) took: ", new Date().getTime()-t0, "ms")
-    
+
     data = result.data;
     console.log( "data.length: ", data.length)
 
