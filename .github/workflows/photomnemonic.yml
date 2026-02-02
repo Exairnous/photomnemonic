@@ -3,13 +3,16 @@ name: photomnemonic
 on:
   push:
     branches:
-    paths-ignore: ["README.md"]
+      - 'master'
+      - 'hotfix/**'
+    paths-ignore: [".github/**", "README.md", "LICENSE"]
   workflow_dispatch:
 env:
   containerName: photomnemonic
 
 jobs:
   turkeyGitops:
+    if: github.repository_owner == 'Hubs-Foundation'
     uses: Hubs-Foundation/hubs-ops/.github/workflows/turkeyGitops.yml@master
     with:
       registry: hubsfoundation
