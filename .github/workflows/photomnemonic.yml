@@ -3,16 +3,16 @@ name: photomnemonic
 on:
   push:
     branches:
-    paths-ignore: ["README.md"]
+    paths-ignore: ["README.md", "LICENSE"]
   workflow_dispatch:
 env:
   containerName: photomnemonic
 
 jobs:
   turkeyGitops:
-    uses: mozilla/hubs-ops/.github/workflows/turkeyGitops.yml@master
+    uses: Hubs-Foundation/hubs-ops/.github/workflows/turkeyGitops.yml@master
     with:
-      registry: mozillareality
+      registry: hubsfoundation
       push_gcr: true
       # dockerfile: Dockerfile
     secrets:

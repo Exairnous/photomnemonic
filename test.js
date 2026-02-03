@@ -1,5 +1,5 @@
 const test = require("ava");
-const { urlAllowed } = require("./url-utils");
+const { urlAllowed } = require("./utils");
 
 test("should disallow invalid and internal urls", async t => {
   t.false(await urlAllowed("invalid url"));

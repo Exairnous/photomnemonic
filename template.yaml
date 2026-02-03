@@ -6,13 +6,13 @@ Description: >
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: photomnemonic
-    Description: Site screenshotter for Hubs Cloud
-    Author: Mozilla
+    Description: Site screenshotter for Hubs
+    Author: Mozilla (Original Author), Hubs Foundation (Current Maintainer)
     SpdxLicenseId: MPL-2.0
     LicenseUrl: LICENSE
     ReadmeUrl: README.md
     SemanticVersion: 0.2.0
-    SourceCodeUrl: https://github.com/mozilla/photomnemonic
+    SourceCodeUrl: https://github.com/Hubs-Foundation/photomnemonic
 
 Parameters:
   PhotomnemonicRoleArn:
